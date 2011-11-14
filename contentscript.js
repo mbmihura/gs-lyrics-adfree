@@ -1,20 +1,11 @@
-
 var songName;
 var artistName;
 var albumName;
 
 $(document).ready(function (){
-   var left = $("#nav").width()+parseInt($("#nav").css("left"));
-   var uiStyle = "style=\"left: "+left+"px; position: absolute; top: 4px;\"";
-
-   var bgImageURL = chrome.extension.getURL("images/grooveshark-lyrics.png");
-   var aStyle = "style=\"background-image:url("+bgImageURL+");display: block; width: 32px; height: 32px; position: relative; \"";
-
    //add Image Button at the header
-   $("#header").append("<ul id=\"grooveshark_lyrics_nav\" "+ uiStyle+"><li id=\"header_nav_lyrics\" class=\"lyrics\"><a href=\"/#/user\" " + aStyle + " ></a></li></ul>");
-   //reposition it
-   $("#grooveshark_lyrics_nav").css("left",$("#nav").width()+parseInt($("#nav").css("left")));
-   $("#grooveshark_lyrics_nav").click(getLyrics);
+   $("#header_mainNavigation").append("<a href=\"/#/user\" id=\"header_lyrics_btn\" >Lyrics</a>");
+   $("#header_lyrics_btn").click(getLyrics);
 });
 
 function getLyrics(){
